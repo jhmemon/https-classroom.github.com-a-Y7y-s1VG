@@ -44,9 +44,27 @@ def delete_item_from_shopping_list():
     cursor.close()
     connection.close()
 """
+"""
 def display_menu():
     print("=== Shopping List Application ===")
     print("1. View Shopping List")
     print("2. Add Item to Shopping List")
     print("3. Delete Item from Shopping List")
     print("4. Exit")
+"""
+
+def main():
+    while True:
+        display_menu()
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            view_shopping_list()
+        elif choice == "2":
+            add_item_to_shopping_list()
+        elif choice == "3":
+            delete_item_from_shopping_list()
+        elif choice == "4":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
