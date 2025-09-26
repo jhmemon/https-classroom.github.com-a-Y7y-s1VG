@@ -33,6 +33,7 @@ def add_item_to_shopping_list():
     connection.close()
 
 """
+"""
 def delete_item_from_shopping_list():
     item_id = int(input("Enter the ID of the item to delete: "))
     connection = get_db_connection()
@@ -42,3 +43,10 @@ def delete_item_from_shopping_list():
     print("Item deleted successfully!")
     cursor.close()
     connection.close()
+"""
+def display_menu():
+    print("=== Shopping List Application ===")
+    print("1. View Shopping List")
+    print("2. Add Item to Shopping List")
+    print("3. Delete Item from Shopping List")
+    print("4. Exit")
