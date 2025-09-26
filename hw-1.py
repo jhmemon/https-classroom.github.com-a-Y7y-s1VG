@@ -1,6 +1,6 @@
 import mysql.connector
 
-"""""
+
 def get_db_connection():
     return mysql.connector.connect(
         host="database1.cm5ge0qyc76x.us-east-1.rds.amazonaws.com",
@@ -8,8 +8,7 @@ def get_db_connection():
         password="Jazib!23",
         database="database1"
     )
-"""
-"""
+
 def view_shopping_list():
     connection = get_db_connection()
     cursor = connection.cursor()
@@ -19,8 +18,7 @@ def view_shopping_list():
         print(f"ID: {row[0]}, Item: {row[1]}, Quantity: {row[2]}, Added On: {row[3]}")
     cursor.close()
     connection.close()
-"""
-"""
+
 def add_item_to_shopping_list():
     item_name = input("Enter item name: ")
     quantity = int(input("Enter quantity: "))
@@ -32,8 +30,8 @@ def add_item_to_shopping_list():
     cursor.close()
     connection.close()
 
-"""
-"""
+
+
 def delete_item_from_shopping_list():
     item_id = int(input("Enter the ID of the item to delete: "))
     connection = get_db_connection()
@@ -43,15 +41,14 @@ def delete_item_from_shopping_list():
     print("Item deleted successfully!")
     cursor.close()
     connection.close()
-"""
-"""
+
 def display_menu():
     print("=== Shopping List Application ===")
     print("1. View Shopping List")
     print("2. Add Item to Shopping List")
     print("3. Delete Item from Shopping List")
     print("4. Exit")
-"""
+
 
 def main():
     while True:
