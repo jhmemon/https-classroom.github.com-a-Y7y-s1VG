@@ -5,19 +5,19 @@ cis2368
 
 Database Setup
 
-Step 1: AWS RDS Configuration
-- Created an AWS RDS MySQL instance with the following details:
-  - Engine: MySQL
-  - Instance Type: Free Tier
-  - Public Accessibility: Enabled
-  - Security Group: Configured to allow connections on port 3306 from my IP address.
+AWS RDS Configuration
+Created an AWS RDS MySQL instance with the following details:
+Engine: MySQL
+Instance Type: Free tier
+Public Accessibility: Enabled
+Security Group: Configured to allow connections on port 3306 from my IP address.
 
-Step 2: Database credentials
+Database credentials
 - Endpoint: `database1.cm5ge0qyc76x.us-east-1.rds.amazonaws.com`
-- Username: `admin` (or the username you configured)
+- Username: `admin`
 - Password: Jazib!23
 
-Step 3: Database schema
+Database schema
 - Created a database named `shopping_list_db`:
   ```sql
   CREATE DATABASE shopping_list_db;
