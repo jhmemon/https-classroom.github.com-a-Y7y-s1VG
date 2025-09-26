@@ -1,5 +1,6 @@
 import mysql.connector
 
+"""""
 def get_db_connection():
     return mysql.connector.connect(
         host="database1.cm5ge0qyc76x.us-east-1.rds.amazonaws.com",
@@ -7,3 +8,14 @@ def get_db_connection():
         password="Jazib!23",
         database="database1"
     )
+"""
+
+def view_shopping_list():
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM shopping_list")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(f"ID: {row[0]}, Item: {row[1]}, Quantity: {row[2]}, Added On: {row[3]}")
+    cursor.close()
+    connection.close()
