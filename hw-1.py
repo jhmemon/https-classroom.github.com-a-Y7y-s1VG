@@ -9,7 +9,7 @@ def get_db_connection():
         database="database1"
     )
 """
-
+"""
 def view_shopping_list():
     connection = get_db_connection()
     cursor = connection.cursor()
@@ -17,5 +17,16 @@ def view_shopping_list():
     rows = cursor.fetchall()
     for row in rows:
         print(f"ID: {row[0]}, Item: {row[1]}, Quantity: {row[2]}, Added On: {row[3]}")
+    cursor.close()
+    connection.close()
+"""
+def add_item_to_shopping_list():
+    item_name = input("Enter item name: ")
+    quantity = int(input("Enter quantity: "))
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    cursor.execute("INSERT INTO shopping_list (item_name, quantity) VALUES (%s, %s)", (item_name, quantity))
+    connection.commit()
+    print("Item added successfully!")
     cursor.close()
     connection.close()
