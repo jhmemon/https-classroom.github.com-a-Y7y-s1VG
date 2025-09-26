@@ -20,6 +20,7 @@ def view_shopping_list():
     cursor.close()
     connection.close()
 """
+"""
 def add_item_to_shopping_list():
     item_name = input("Enter item name: ")
     quantity = int(input("Enter quantity: "))
@@ -28,5 +29,16 @@ def add_item_to_shopping_list():
     cursor.execute("INSERT INTO shopping_list (item_name, quantity) VALUES (%s, %s)", (item_name, quantity))
     connection.commit()
     print("Item added successfully!")
+    cursor.close()
+    connection.close()
+
+"""
+def delete_item_from_shopping_list():
+    item_id = int(input("Enter the ID of the item to delete: "))
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    cursor.execute("DELETE FROM shopping_list WHERE id = %s", (item_id,))
+    connection.commit()
+    print("Item deleted successfully!")
     cursor.close()
     connection.close()
